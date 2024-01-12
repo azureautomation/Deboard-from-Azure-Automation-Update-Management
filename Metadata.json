@@ -1,0 +1,20 @@
+{
+    "Author": "Saswata Pandit",
+    "ContentSize": 22393,
+    "ContentUrl": "https://raw.githubusercontent.com/azureautomation/Deboard-from-Azure-Automation-Update-Management/main/Deboarding.ps1",
+    "DownloadCount": 0,
+    "Id": "azureautomation/Deboard-from-Azure-Automation-Update-Management",
+    "IsFederated": true,
+    "IsWorkflow": false,
+    "Popularity": 4,
+    "RaterCount": 0,
+    "Rating": 0.0,
+    "ReleaseDate": "2024-01-10T00:00:00",
+    "RunbookKind": 5,
+    "RunbookKindString": "PowerShell",
+    "Summary": "This Powershell script is designed to remove updates solution from their log analytics workspace linked to the automation account and disables update schedules.",
+    "Title": "Deboard from Azure Automation Update Management",
+    "UpdatedDate": "2024-01-10T00:00:00",
+    "Url": "https://github.com/azureautomation/Deboard-from-Azure-Automation-Update-Management",
+    "UserTags": "Powershell, Azure Automation"
+}
