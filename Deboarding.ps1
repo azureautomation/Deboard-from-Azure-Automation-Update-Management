@@ -176,7 +176,7 @@ function Invoke-AzRestApiWithRetry
 			Number of retries to attempt.
 	
 		.PARAMETER Delay
-			The maximum delay (in seconds) between each attempt. The default is 60 second.
+			The maximum delay (in seconds) between each attempt. The default is 5 seconds.
             
 		.EXAMPLE
 			Invoke-AzRestApiWithRetry -Params @{SubscriptionId = "xxxx" ResourceGroup = "rgName" ResourceName = "resourceName" ResourceProvider = "Microsoft.Compute" ResourceType = "virtualMachines"} -Payload "{'location': 'westeurope'}"
@@ -196,7 +196,7 @@ function Invoke-AzRestApiWithRetry
 	
 		[Parameter(Mandatory = $false, Position = 4)]
 		[ValidateRange(0, [UInt32]::MaxValue)]
-		[UInt32]$Delay = 60
+		[UInt32]$Delay = 5
 	)
 
     if ($Payload)
