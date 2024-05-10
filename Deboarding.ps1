@@ -621,7 +621,14 @@ function Get-AllSoftwareUpdateConfigurations
 # Avoid clogging streams with Import-Modules outputs.
 $VerbosePreference = "SilentlyContinue"
 
-$azConnect = Connect-AzAccount -Identity -AccountId $UserManagedServiceIdentityClientId -SubscriptionId (Parse-ArmId -ResourceId $AutomationAccountResourceId).Subscription
+$AutomationAccountAzureEnvironment = Get-AutomationVariable -Name "AutomationAccountAzureEnvironment"
+if ($null -eq $AutomationAccountAzureEnvironment)
+{
+    # If AutomationAccountAzureEnvironment variable is not set, default to public cloud.
+    $AutomationAccountAzureEnvironment = "AzureCloud"
+}
+
+$azConnect = Connect-AzAccount -Identity -AccountId $UserManagedServiceIdentityClientId -SubscriptionId (Parse-ArmId -ResourceId $AutomationAccountResourceId).Subscription -Environment $AutomationAccountAzureEnvironment
 if ($null -eq $azConnect)
 {
     Write-Telemetry -Message ("Failed to connect with user managed identity. Please ensure that the user managed idenity is added to the automation account and having the required role assignments.") -Level $ErrorLvl
