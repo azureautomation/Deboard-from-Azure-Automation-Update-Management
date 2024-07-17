@@ -54,7 +54,7 @@ $AutomationAccountApiVersion = "2023-11-01";
 # ARM endpoints.
 $LinkedWorkspacePath = "{0}/linkedWorkspace"
 $SolutionsWithWorkspaceFilterPath = "/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.OperationsManagement/solutions?`$filter=properties/workspaceResourceId%20eq%20'{2}'"
-$SoftwareUpdateConfigurationsPath = "{0}/softwareUpdateConfigurations"
+$SoftwareUpdateConfigurationsPath = "{0}/softwareUpdateConfigurations?`$skip={1}"
 $JobSchedulesWithPatchRunbookFilterPath = "{0}/JobSchedules/?$filter=properties/runbook/name%20eq%20'Patch-MicrosoftOMSComputers'&`$skip={1}"
 $AutomationSchedulesPath = "{0}/Schedules/{1}"
 
